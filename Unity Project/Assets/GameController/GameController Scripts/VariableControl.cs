@@ -9,11 +9,11 @@ public class VariableControl : MonoBehaviour {
 	public int currentCharacterSelectNum = 0;
 	public int score;
 	public float gameTimer;
-	public float maxGameTime = 3F;
+	public float maxGameTime = 20F;
 	public bool timeToChangeGameState;
 	// Use this for initialization
 	void Awake() {
-		DontDestroyOnLoad(transform.gameObject);
+		DontDestroyOnLoad(gameObject);
 	}
 
 	void Start () {
