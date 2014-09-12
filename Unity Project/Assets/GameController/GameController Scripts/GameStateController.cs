@@ -4,6 +4,9 @@ using System.Collections;
 public class GameStateController : MonoBehaviour {
 	VariableControl variables;
 	bool scoreShown = false;
+	public GameObject letterGenerator;
+	public bool inititalizeLetterGen = true;
+
 	// Use this for initialization
 	void Start () {
 		variables = gameObject.GetComponent<VariableControl>();
@@ -21,10 +24,19 @@ public class GameStateController : MonoBehaviour {
 
 		if (Application.loadedLevelName == "Phase2") {
 			variables.gameTimer += Time.deltaTime;
+
+			if(inititalizeLetterGen){
+				CreateLetterGenerator();
+			}
 		} 
 		if (variables.gameTimer > variables.maxGameTime && scoreShown == false) {
 			Application.LoadLevel("SummaryScreen");
 			scoreShown = true;
 		}
+	}
+
+	void CreateLetterGenerator(){
+		Instantiate(letterGenerator, new Vector3 (0,0,0),new Quaternion(0,0,0,0));
+		inititalizeLetterGen = false;
 	}
 }

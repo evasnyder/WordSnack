@@ -48,8 +48,10 @@
   <ItemGroup>
      <Compile Include="Assets\Characters\PlayerScripts\SelectScript.cs" />
      <Compile Include="Assets\GUI\GUI Scripts\MainGUI.cs" />
+     <Compile Include="Assets\GUI\GUI Scripts\StartScreenGUI.cs" />
      <Compile Include="Assets\GameController\GameController Scripts\GameStateController.cs" />
      <Compile Include="Assets\GameController\GameController Scripts\VariableControl.cs" />
+     <Compile Include="Assets\GameController\letterGenScript\randomLetters.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
