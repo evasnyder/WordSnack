@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class randomLetters : MonoBehaviour {
+public class debugLetters : MonoBehaviour {
 	public int numA,numB,numC,numD,numE,numF,numG,numH,numI,numJ,numK,numL,numM,numN,numO,numP,numQ,numR,numS,numT,numU,numV,numW,numX,numY,numZ;
 	public int totalLetters,totalVowels;
 	public GameObject [] letterObjs;
@@ -9,23 +9,23 @@ public class randomLetters : MonoBehaviour {
 	public bool initialize = true;
 	public GameObject [] lettersOnBoard;
 	public float timer = 0f;
-
+	
 	void Awake(){
 		print ("im awake");
 	}
-
+	
 	// Use this for initialization
 	void Start () {
 		print ("beginning of start function");
 		lettersOnBoard = new GameObject[10];
-;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		print (timer.ToString());
-
+		//print (timer.ToString());
+		
 		if(initialize && timer > 1){
 			print ("into the if");
 			initialize = false;
@@ -40,7 +40,7 @@ public class randomLetters : MonoBehaviour {
 			print ("created letters, should be done NOW");
 		}
 	}
-
+	
 	string returnLetters(int n)
 	{
 		//Random r = new Random();
@@ -52,36 +52,36 @@ public class randomLetters : MonoBehaviour {
 		}
 		return letters;
 	}
-
-//	char randomVowel(int r)
-//	{	
-//		int currentPos = 0;
-//		//TuningList tl = new TuningList();
-//		int letter = Mathf.RoundToInt(Random.Range(0,totalVowels));
-//		
-//		// System.Console.WriteLine(totalVowels + " " + letter);
-//
-//		if(letter < numE)
-//			return 'e';
-//		currentPos += numE;
-//		if(letter < (currentPos + numA))
-//			return 'a';
-//		currentPos += numA;
-//		if(letter < (currentPos + numI))
-//			return 'i';
-//		currentPos += numI;
-//		if(letter < (currentPos + numO))
-//			return 'o';
-//		currentPos += numO;
-//		if(letter < (currentPos + numU))
-//			return 'u';
-//		return '.';
-//	}
+	
+	//	char randomVowel(int r)
+	//	{	
+	//		int currentPos = 0;
+	//		//TuningList tl = new TuningList();
+	//		int letter = Mathf.RoundToInt(Random.Range(0,totalVowels));
+	//		
+	//		// System.Console.WriteLine(totalVowels + " " + letter);
+	//
+	//		if(letter < numE)
+	//			return 'e';
+	//		currentPos += numE;
+	//		if(letter < (currentPos + numA))
+	//			return 'a';
+	//		currentPos += numA;
+	//		if(letter < (currentPos + numI))
+	//			return 'i';
+	//		currentPos += numI;
+	//		if(letter < (currentPos + numO))
+	//			return 'o';
+	//		currentPos += numO;
+	//		if(letter < (currentPos + numU))
+	//			return 'u';
+	//		return '.';
+	//	}
 	
 	char randomLetter()
 	{
 		int currentPos = 0;
-//		TuningList tl = new TuningList();
+		//		TuningList tl = new TuningList();
 		int letter = Random.Range(0,totalLetters);
 		
 		// System.Console.WriteLine(totalLetters + " " + letter);
@@ -165,7 +165,7 @@ public class randomLetters : MonoBehaviour {
 			return 'z';
 		return '.';
 	}
-
+	
 	void TuningList(){
 		numA = 9;
 		numB = 2;
@@ -196,7 +196,7 @@ public class randomLetters : MonoBehaviour {
 		totalLetters =  numA + numB + numC + numD + numE + numF + numG + numH + numI + numJ + numK + numL + numM + numN + numO + numP + numQ + numR + numS + numT + numU + numV + numW + numX + numY + numZ;
 		totalVowels = numA + numE + numI + numO + numU;
 	}
-
+	
 	void CreateLetters(string l){
 		char [] letterArray = l.ToCharArray();
 		for (int i = 0; i< l.Length; i++){
@@ -206,7 +206,7 @@ public class randomLetters : MonoBehaviour {
 				//print("its a");
 				spawnMe = letterObjs[0];
 				//Instantiate(letterObjs[0], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-			break;
+				break;
 			case 'b':
 				//print("its b");
 				spawnMe = letterObjs[1];
@@ -335,9 +335,9 @@ public class randomLetters : MonoBehaviour {
 			}
 			lettersOnBoard[i] = Instantiate(spawnMe, new Vector3(i*1.5f-7,0,0),new Quaternion(0,0,0,0)) as GameObject;
 		}
-
+		
 	}
-
-
+	
+	
 }
 

@@ -29,7 +29,7 @@ public class VariableControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		setSelectNum();
-		if (characterSelected[0] && characterSelected[1] && characterSelected[2]) {
+		if (characterSelected[0] && characterSelected[1] && characterSelected[2] && !(Application.loadedLevelName == "Phase2")) {
 			timeToChangeGameState = true;
 		}
 	}

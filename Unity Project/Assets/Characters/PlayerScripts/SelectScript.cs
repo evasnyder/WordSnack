@@ -9,6 +9,7 @@ public class SelectScript : MonoBehaviour {
 	int selectNum = -1;
 	// Use this for initialization
 	void Start () {
+	
 		variables = gameController.GetComponent<VariableControl>();
 	}
 	
